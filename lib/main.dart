@@ -36,7 +36,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final DatabaseHelper _dbHelper = DatabaseHelper();
-  List<Employee> _EmployeeList = [];
+  List<Employee> _employeeList = [];
 
   @override
   void initState() {
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _loadEmployeeList() async {
     final EmployeeList = await _dbHelper.getEmployeeList();
     setState(() {
-      _EmployeeList = EmployeeList;
+      _employeeList = EmployeeList;
     });
   }
 
@@ -91,25 +91,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: _EmployeeList.isEmpty
+      body: _employeeList.isEmpty
           ? const Center(child: Text("No Employees found. Add some!"))
           : ListView.builder(
-              itemCount: _EmployeeList.length,
+              itemCount: _employeeList.length,
               itemBuilder: (BuildContext context, int index) {
-                final Employee = _EmployeeList[index];
+                final employee = _employeeList[index];
 
                 return ListTile(
-                  title: Text(Employee.name),
-                  subtitle: Text("Age: ${Employee.age}"),
+                  title: Text(employee.name),
+                  subtitle: Text("Age: ${employee.age}"),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                        onPressed: () => updateEmployee(Employee),
+                        onPressed: () => updateEmployee(employee),
                         icon: Icon(Icons.edit),
                       ),
                       IconButton(
-                        onPressed: () => deleteEmployee(Employee.id!),
+                        onPressed: () => deleteEmployee(employee.id!),
                         icon: Icon(Icons.delete),
                       ),
                     ],
