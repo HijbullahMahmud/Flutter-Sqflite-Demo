@@ -18,10 +18,6 @@ This app allows you to **add, update, and delete employees** with a random age a
 
 ## Screenshots
 
-### Home Screen (No Employees)
-
-![No Employees Screenshot](screenshots/no_employees.png)
-
 ### Employee List
 
 ![Employee List Screenshot](screenshots/employee_list.png)
