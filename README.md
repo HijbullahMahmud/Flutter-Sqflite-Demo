@@ -59,7 +59,6 @@ flutter pub get
 flutter run
 ```
 
-
 ### Project Structure
 
 ```bash
@@ -68,3 +67,61 @@ lib/
 ├── employee.dart      # Employee model
 ├── database_helper.dart # Sqflite database helper class
 ```
+
+### main.dart
+
+- Initializes the app and sets up the home page.
+- Contains the main CRUD logic.
+- Uses ListView.builder to display employee list.
+
+### employee.dart
+
+- Defines the Employee model.
+- Contains helper methods like toMap() for database storage.
+
+### database_helper.dart
+
+- Manages SQLite database.
+- Provides methods:
+
+  - insertEmployee(Employee employee)
+  - getEmployeeList()
+  - updateEmployee(Employee employee)
+  - deleteEmployee(int id)
+
+### Usages
+
+- Add Employee: Tap the "+" floating button.
+- Update Employee: Tap the edit icon next to an employee.
+- Delete Employee: Tap the delete icon next to an employee.
+  - The app automatically updates the list after each operation.
+
+### Dependencies
+
+- sqflite – SQLite plugin for Flutter.
+- path – For handling file paths.
+- path_provider – To get application document directory.
+
+### Add them in your pubspec.yaml:
+
+```bash
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.2.8+4
+  path: ^1.8.4
+  path_provider: ^2.0.16
+```
+
+### Notes
+
+- Random numbers are generated for employee names and ages.
+- Employee names are updated by appending \* when edited.
+- Database is persistent across app restarts.
+
+### Future Improvements
+
+- Add search functionality.
+- Add sorting by age or name.
+- Add form validation for employee details.
+- Implement better UI for adding/updating employees.
