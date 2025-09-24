@@ -98,9 +98,9 @@ lib/
 
 ### Dependencies
 
-- sqflite – SQLite plugin for Flutter.
-- path – For handling file paths.
-- path_provider – To get application document directory.
+- [sqflite](https://pub.dev/packages/sqflite) – SQLite plugin for Flutter.
+- [path](https://pub.dev/packages/path) – For handling file paths.
+- [path_provider](https://pub.dev/packages/path_provider) – To get application document directory.
 
 ### Add them in your pubspec.yaml:
 
