@@ -20,7 +20,7 @@ This app allows you to **add, update, and delete employees** with a random age a
 
 ### Employee List
 
-![Employee List Screenshot](screenshots/employee_list.png)
+<img src="screenshots/employee_list.png" alt="Employee List Screenshot" width="600">
 
 ---
 
